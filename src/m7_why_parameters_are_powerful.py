@@ -98,17 +98,21 @@ def run_test_better_draw_circles():
     print('--------------------------------------------------')
     print('Testing  draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    draw_circles()
+
+    # Test 1
+    better_draw_circles(10)
+    # Test 2
+    better_draw_circles(5)
+    # Test 3
+    better_draw_circles(3)
 
 
-
-
-def better_draw_circles():
+def better_draw_circles(n):
     window = rg.RoseWindow(400, 400)
 
     center = rg.Point(200, 200)
     for k in range(21):
-        circle = rg.Circle(center, 10 * k)
+        circle = rg.Circle(center, n * k)
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
@@ -146,4 +150,32 @@ def better_draw_circles():
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
+def run_test_even_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+
+    # Test 1
+    even_better_draw_circles(10, 10, 'green')
+    # Test 2
+    even_better_draw_circles(4, 8, 'red')
+    # Test 3
+    even_better_draw_circles(6, 3, 'blue')
+
+def even_better_draw_circles(r, c, p):
+    window = rg.RoseWindow(400, 400)
+
+    center = rg.Point(200, 200)
+    for k in range(c):
+        circle = rg.Circle(center, r * k)
+        circle.attach_to(window)
+        circle.outline_color = p
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
+
+
 main()
