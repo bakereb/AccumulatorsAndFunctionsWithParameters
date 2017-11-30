@@ -227,6 +227,7 @@ def print_cosines():
     for k in range(101):
         print((math.cos(k)) * 80)
 
+
 def draw_cosines_and_sines():
     """
     -- Constructs a window whose width and height are both 400.
@@ -264,5 +265,7 @@ def draw_cosines_and_sines():
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
 # ----------------------------------------------------------------------
+
+
 if __name__ == '__main__':
     main()
